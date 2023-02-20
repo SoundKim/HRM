@@ -1,0 +1,42 @@
+﻿@model JobRequirementResponseModel
+<div class="container">
+    <form asp-controller="JobRequirement" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="my-5 row col-12">
+            <label for="Title">Title</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Description">Description</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="TotalPositions">TotalPositions</label>
+            <input asp-for="TotalPositions" class="form-control" />
+            <span asp-validation-for="TotalPositions"></span>
+        </div>
+        <div class="my-5 row col-12 input-group date" data-provide="datepicker">
+            <label for="PostingDate">PostingDate</label>
+            <input asp-for="PostingDate" class="form-control" />
+            <span asp-validation-for="PostingDate"></span>
+        </div>
+        <div class="my-5 row col-12 input-group date" data-provide="datepicker">
+            <label for="ClosingDate">ClosingDate</label>
+            <input asp-for="ClosingDate" class="form-control" />
+            <span asp-validation-for="ClosingDate"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="JobCategoryId">JobCategoryId</label>
+            <input asp-for="JobCategoryId" class="form-control" />
+            <span asp-validation-for="JobCategoryId"></span>
+        </div>
+        <div class="my-5 row col-12 form-check">
+            <label for="IsActive">IsActive</label>
+            <input type="checkbox" class="form-check-input" asp-for="IsActive">
+            <span asp-validation-for="IsActive"></span>
+        </div>
+        <input type="submit" value="Update Job Requirement" class="btn btn-primary" />
+    </form>
+</div>

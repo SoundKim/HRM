@@ -1,0 +1,26 @@
+﻿@model CandidateRequestModel;
+<div class="container">
+    <form asp-controller="Candidate" asp-action="Create" method="post">
+        <div class="my-5 row col-12">
+            <label for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="from-control" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="LastName">Last Name</label>
+            <input asp-for="LastName" class="from-control" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Mobile">Mobile</label>
+            <input asp-for="Mobile" class="from-control" />
+            <span asp-validation-for="Mobile"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="EmailId">Email Id</label>
+            <input asp-for="EmailId" class="from-control" />
+            <span asp-validation-for="EmailId"></span>
+        </div>
+        <input type="submit" value="Add Candidate" class="btn btn-primary" />
+    </form>
+</div>

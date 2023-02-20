@@ -1,0 +1,12 @@
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\bin\Debug\net6.0\HRM.ApplicationCore.deps.json
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\bin\Debug\net6.0\HRM.ApplicationCore.dll
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\bin\Debug\net6.0\HRM.ApplicationCore.pdb
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\HRM.ApplicationCore.csproj.AssemblyReference.cache
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\HRM.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\HRM.ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\HRM.ApplicationCore.AssemblyInfo.cs
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\HRM.ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\HRM.ApplicationCore.dll
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\refint\HRM.ApplicationCore.dll
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\HRM.ApplicationCore.pdb
+C:\Users\drsor\source\repos\HRM\HRM.ApplicationCore\obj\Debug\net6.0\ref\HRM.ApplicationCore.dll

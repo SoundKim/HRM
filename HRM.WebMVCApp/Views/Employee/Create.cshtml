@@ -1,0 +1,41 @@
+﻿@model EmployeeRequestModel
+<div class="container">
+    <form asp-controller="Employee" asp-action="Create" method="post">
+        <div class="my-5 row col-12">
+            <label for="FirstName">First Name</label>
+            <input asp-for="FirstName" class="form-control"/>
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="LastName">Last Name</label>
+            <input asp-for="LastName" class="form-control"/>
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="EmailId">Email Id</label>
+            <input asp-for="EmailId" class="form-control" />
+            <span asp-validation-for="EmailId"></span>
+        </div>
+        <div class="my-5 row col-12 input-group date" data-provide="datepicker">
+            <label for="DOB">Date Of Birth </label>
+            <input asp-for="DOB" class="form-control" />
+            <span asp-validation-for="DOB"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Phone">Phone</label>
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone"></span>
+        </div>
+        <div class="my-5 row col-12 input-group date" data-provide="datepicker">
+            <label for="HireDate">Hire Date</label>
+            <input asp-for="HireDate" class="form-control" />
+            <span asp-validation-for="HireDate"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="ManagerId">Manager Id</label>
+            <input asp-for="ManagerId" class="form-control" />
+            <span asp-validation-for="ManagerId"></span>
+        </div>
+        <input type="submit" value="Add Employee" class="btn btn-primary" />
+    </form>
+</div>

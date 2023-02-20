@@ -1,0 +1,16 @@
+﻿@model CandidateResponseModel
+
+<form asp-action="Delete" asp-controller="Candidate" method="post">
+    <div class="container">
+        <div class="row">
+            <label asp-for="FirstName"></label>
+            <span>@Model.FirstName</span>
+        </div>
+        <div class="row">
+            <label asp-for="LastName"></label>
+            <span>@Model.LastName</span>
+        </div>
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+    </div>
+
+</form>

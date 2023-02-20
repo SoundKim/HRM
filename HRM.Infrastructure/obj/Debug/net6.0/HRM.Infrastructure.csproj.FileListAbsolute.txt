@@ -1,0 +1,15 @@
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\bin\Debug\net6.0\HRM.Infrastructure.deps.json
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\bin\Debug\net6.0\HRM.Infrastructure.dll
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\bin\Debug\net6.0\HRM.Infrastructure.pdb
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\bin\Debug\net6.0\HRM.ApplicationCore.dll
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\bin\Debug\net6.0\HRM.ApplicationCore.pdb
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.AssemblyInfo.cs
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.csproj.CopyComplete
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.dll
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\refint\HRM.Infrastructure.dll
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\HRM.Infrastructure.pdb
+C:\Users\drsor\source\repos\HRM\HRM.Infrastructure\obj\Debug\net6.0\ref\HRM.Infrastructure.dll
