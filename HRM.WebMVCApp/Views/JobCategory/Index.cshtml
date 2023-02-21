@@ -1,0 +1,30 @@
+﻿@model IEnumerable<JobCategoryResponseModel>;
+
+<div class="page-header">
+    <h1>List of Job Categories</h1>
+</div>
+
+<a asp-action="Create" asp-controller="JobCategory">Add New Job Category</a>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Is Active</th>
+            <th colspan="2">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.Name</td>
+                    <td>@m.IsActive</td>
+                    <td><a asp-action="Edit" asp-controller="JobCategory" asp-route-id="@m.Id">Edit</a></td>
+                    <td><a asp-action="Delete" asp-controller="JobCategory" asp-route-id="@m.Id">Delete</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

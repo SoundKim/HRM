@@ -20,11 +20,37 @@ builder.Services.AddDbContext<HRMDbContext>(option =>
 builder.Services.AddScoped<ICandidateRepositoryAsync, CandidateRepositoryAsync>();
 builder.Services.AddScoped<IEmployeeRepositoryAsync, EmployeeRepositoryAsync>();
 builder.Services.AddScoped<IJobRequirementRepositoryAsync, JobRequirementRepositoryAsync>();
+builder.Services.AddScoped<IEmployeeRoleRepositoryAsync, EmployeeRoleRepositoryAsync>();
+builder.Services.AddScoped<IEmployeeStatusRepositoryAsync, EmployeeStatusRepositoryAsync>();
+builder.Services.AddScoped<IEmployeeTypeRepositoryAsync, EmployeeTypeRepositoryAsync>();
+builder.Services.AddScoped<IJobCategoryRepositoryAsync, JobCategoryRepositoryAsync>();
+builder.Services.AddScoped<IInterviewTypeRepositoryAsync, InterviewTypeRepositoryAsync>();
+builder.Services.AddScoped<IInterviewStatusRepositoryAsync, InterviewStatusRepositoryAsync>();
+builder.Services.AddScoped<IInterviewRepositoryAsync, InterviewRepositoryAsync>();
+builder.Services.AddScoped<IFeedbackRepositoryAsync, FeedbackRepositoryAsync>();
+builder.Services.AddScoped<ISubmissionRepositoryAsync, SubmissionRepositoryAsync>();
+builder.Services.AddScoped<IUserRepositoryAsync, UserRepositoryAsync>();
+builder.Services.AddScoped<IUserRoleRepositoryAsync, UserRoleRepositoryAsync>();
+builder.Services.AddScoped<IRoleRepositoryAsync, RoleRepositoryAsync>();
 
 //DI for Services
 builder.Services.AddScoped<ICandidateServiceAsync, CandidateServiceAsync>();
 builder.Services.AddScoped<IEmployeeServiceAsync, EmployeeServiceAsync>();
 builder.Services.AddScoped<IJobRequirementServiceAsync, JobRequirementServiceAsync>();
+builder.Services.AddScoped<IEmployeeRoleServiceAsync, EmployeeRoleServiceAsync>();
+builder.Services.AddScoped<IEmployeeStatusServiceAsync, EmployeeStatusServiceAsync>();
+builder.Services.AddScoped<IEmployeeTypeServiceAsync, EmployeeTypeServiceAsync>();
+builder.Services.AddScoped<IJobCategoryServiceAsync, JobCategoryServiceAsync>();
+builder.Services.AddScoped<IInterviewTypeServiceAsync, InterviewTypeServiceAsync>();
+builder.Services.AddScoped<IInterviewStatusServiceAsync, InterviewStatusServiceAsync>();
+builder.Services.AddScoped<IInterviewServiceAsync, InterviewServiceAsync>();
+builder.Services.AddScoped<IFeedbackServiceAsync, FeedbackServiceAsync>();
+builder.Services.AddScoped<ISubmissionServiceAsync, SubmissionServiceAsync>();
+builder.Services.AddScoped<IUserServiceAsync, UserServiceAsync>();
+builder.Services.AddScoped<IUserRoleServiceAsync, UserRoleServiceAsync>();
+builder.Services.AddScoped<IRoleServiceAsync, RoleServiceAsync>();
+
+
 
 var app = builder.Build();
 

@@ -1,0 +1,32 @@
+﻿@model IEnumerable<UserResponseModel>;
+
+<div class="page-header">
+    <h1>List of Users</h1>
+</div>
+
+<a asp-action="Create" asp-controller="User">Add New Employee Status</a>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>EmailId</th>
+            <th>Is Active</th>
+            <th colspan="2">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.Username</td>
+                    <td>@m.EmailId</td>
+                    <td>@m.Password</td>
+                    <td><a asp-action="Edit" asp-controller="User" asp-route-id="@m.Id">Edit</a></td>
+                    <td><a asp-action="Delete" asp-controller="User" asp-route-id="@m.Id">Delete</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

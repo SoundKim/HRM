@@ -1,0 +1,16 @@
+﻿@model UserRoleRequestModel
+<div class="container">
+    <form asp-controller="UserRole" asp-action="Create" method="post">
+        <div class="my-5 row col-12">
+            <label for="UserId">UserId</label>
+            <input asp-for="UserId" class="form-control" />
+            <span asp-validation-for="UserId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="RoleId">RoleId</label>
+            <input asp-for="RoleId" class="form-control" />
+            <span asp-validation-for="RoleId"></span>
+        </div>
+        <input type="submit" value="Add User Role" class="btn btn-primary" />
+    </form>
+</div>

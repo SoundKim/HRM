@@ -1,0 +1,21 @@
+﻿@model UserResponseModel
+<div class="container">
+    <form asp-controller="User" asp-action="Edit" method="post">
+        <div class="my-5 row col-12">
+            <label for="Username">Username</label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="EmailId">EmailId</label>
+            <input asp-for="EmailId" class="form-control" />
+            <span asp-validation-for="EmailId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Password">Password</label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <input type="submit" value="Update User" class="btn btn-primary" />
+    </form>
+</div>

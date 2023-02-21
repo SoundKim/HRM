@@ -1,0 +1,16 @@
+﻿@model RoleResponseModel
+<div class="container">
+    <form asp-controller="Role" asp-action="Create" method="post">
+        <div class="my-5 row col-12">
+            <label for="Name">Name</label>
+            <input asp-for="Name" class="form-control" disabled/>
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="Description">Description</label>
+            <input asp-for="Description" class="form-control" disabled/>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <input type="submit" value="Add Role" class="btn btn-danger" />
+    </form>
+</div>
