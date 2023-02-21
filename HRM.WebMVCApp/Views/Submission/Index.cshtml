@@ -9,6 +9,7 @@
 <table class="table table-bordered table-striped table-hover">
     <thead>
         <tr>
+            <th>Id</th>
             <th>CandidateId</th>
             <th>JobRequirementId</th>
             <th>AppliedOn</th>
@@ -20,6 +21,7 @@
             foreach (var m in Model)
             {
                 <tr>
+                    <td>@m.Id</td>
                     <td>@m.CandidateId</td>
                     <td>@m.JobRequirementId</td>
                     <td>@m.AppliedOn</td>

@@ -9,6 +9,7 @@
 <table class="table table-bordered table-striped table-hover">
     <thead>
         <tr>
+            <th>Id</th>
             <th>UserId</th>
             <th>Is Active</th>
             <th colspan="2">Options</th>
@@ -19,6 +20,7 @@
             foreach (var m in Model)
             {
                 <tr>
+                    <td>@m.Id</td>
                     <td>@m.UserId</td>
                     <td>@m.RoleId</td>
                     <td><a asp-action="Edit" asp-controller="UserRole" asp-route-id="@m.Id">Edit</a></td>
