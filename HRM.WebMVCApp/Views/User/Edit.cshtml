@@ -1,6 +1,7 @@
 ﻿@model UserResponseModel
 <div class="container">
     <form asp-controller="User" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
             <label for="Username">Username</label>
             <input asp-for="Username" class="form-control" />

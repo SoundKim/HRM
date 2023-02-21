@@ -1,16 +1,22 @@
-﻿@model RoleResponseModel
+﻿@model FeedbackResponseModel
 <div class="container">
-    <form asp-controller="Role" asp-action="Create" method="post">
+    <form asp-controller="Feedback" asp-action="Create" method="post">
+        <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
-            <label for="Name">Name</label>
-            <input asp-for="Name" class="form-control" disabled/>
-            <span asp-validation-for="Name"></span>
+            <label for="InterviewId">InterviewId</label>
+            <input asp-for="InterviewId" class="form-control" disabled />
+            <span asp-validation-for="InterviewId"></span>
         </div>
         <div class="my-5 row col-12">
             <label for="Description">Description</label>
-            <input asp-for="Description" class="form-control" disabled/>
+            <input asp-for="Description" class="form-control" disabled />
             <span asp-validation-for="Description"></span>
         </div>
-        <input type="submit" value="Add Role" class="btn btn-danger" />
+        <div class="my-5 row col-12">
+            <label for="Abbr">Abbr</label>
+            <input asp-for="Abbr" class="form-control" disabled />
+            <span asp-validation-for="Abbr"></span>
+        </div>
+        <input type="submit" value="Add Feedback" class="btn btn-danger" />
     </form>
 </div>

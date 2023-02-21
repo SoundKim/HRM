@@ -1,16 +1,19 @@
-﻿@model IEnumerable<RoleResponseModel>;
+﻿@model IEnumerable<InterviewResponseModel>;
 
 <div class="page-header">
-    <h1>List of Roles</h1>
+    <h1>List of Interviews</h1>
 </div>
 
-<a asp-action="Create" asp-controller="Role">Add New Role</a>
+<a asp-action="Create" asp-controller="Interview">Add New Interview</a>
 
 <table class="table table-bordered table-striped table-hover">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Description</th>
+            <th>SubmissionId</th>
+            <th>InterviewRound</th>
+            <th>InterviewTypeId</th>
+            <th>InterviewStatusId</th>
+            <th>InterviewerId</th>
             <th colspan="2">Options</th>
         </tr>
     </thead>
@@ -19,10 +22,13 @@
             foreach (var m in Model)
             {
                 <tr>
-                    <td>@m.Name</td>
-                    <td>@m.Description</td>
-                    <td><a asp-action="Edit" asp-controller="Role" asp-route-id="@m.Id">Edit</a></td>
-                    <td><a asp-action="Delete" asp-controller="Role" asp-route-id="@m.Id">Delete</a></td>
+                    <td>@m.SubmissionId</td>
+                    <td>@m.InterviewRound</td>
+                    <td>@m.InterviewTypeId</td>
+                    <td>@m.InterviewStatusId</td>
+                    <td>@m.InterviewerId</td>
+                    <td><a asp-action="Edit" asp-controller="Interview" asp-route-id="@m.Id">Edit</a></td>
+                    <td><a asp-action="Delete" asp-controller="Interview" asp-route-id="@m.Id">Delete</a></td>
                 </tr>
             }
         }

@@ -1,6 +1,7 @@
 ﻿@model UserRoleRequestModel
 <div class="container">
     <form asp-controller="UserRole" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
             <label for="UserId">UserId</label>
             <input asp-for="UserId" class="form-control" />

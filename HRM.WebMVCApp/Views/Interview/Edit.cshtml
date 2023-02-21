@@ -1,16 +1,32 @@
-﻿@model RoleResponseModel
+﻿@model InterviewResponseModel
 <div class="container">
-    <form asp-controller="Role" asp-action="Edit" method="post">
+    <form asp-controller="Interview" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
-            <label for="Name">Name</label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name"></span>
+            <label for="SubmissionId">SubmissionId</label>
+            <input asp-for="SubmissionId" class="form-control" />
+            <span asp-validation-for="SubmissionId"></span>
         </div>
         <div class="my-5 row col-12">
-            <label for="Description">Description</label>
-            <input asp-for="Description" class="form-control" />
-            <span asp-validation-for="Description"></span>
+            <label for="InterviewRound">InterviewRound</label>
+            <input asp-for="InterviewRound" class="form-control" />
+            <span asp-validation-for="InterviewRound"></span>
         </div>
-        <input type="submit" value="Update Role" class="btn btn-primary" />
+        <div class="my-5 row col-12">
+            <label for="InterviewTypeId">InterviewTypeId</label>
+            <input asp-for="InterviewTypeId" class="form-control" />
+            <span asp-validation-for="InterviewTypeId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="InterviewStatusId">InterviewStatusId</label>
+            <input asp-for="InterviewStatusId" class="form-control" />
+            <span asp-validation-for="InterviewStatusId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="InterviewerId">InterviewerId</label>
+            <input asp-for="InterviewerId" class="form-control" />
+            <span asp-validation-for="InterviewerId"></span>
+        </div>
+        <input type="submit" value="Update Interview" class="btn btn-primary" />
     </form>
 </div>

@@ -1,6 +1,7 @@
 ﻿@model RoleResponseModel
 <div class="container">
     <form asp-controller="Role" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
             <label for="Name">Name</label>
             <input asp-for="Name" class="form-control" />
