@@ -16,6 +16,9 @@
             <th>Birth of Date</th>
             <th>Hire Date</th>
             <th>Manager Id</th>
+            <th>Employee Role Id</th>
+            <th>Employee Status Id</th>
+            <th>Employee Type Id</th>
             <th colspan="2">Options</th>
         </tr>
     </thead>
@@ -31,6 +34,9 @@
                     <td>@m.DOB</td>
                     <td>@m.HireDate</td>
                     <td>@m.ManagerId</td>
+                    <td>@m.EmployeeRoleId</td>
+                    <td>@m.EmployeeStatusId</td>
+                    <td>@m.EmployeeTypeId</td>
                     <td><a asp-action= "Edit" asp-controller="Employee" asp-route-id="@m.Id">Edit</a></td>
                     <td><a asp-action= "Delete" asp-controller="Employee" asp-route-id="@m.Id">Delete</a></td>
                 </tr>

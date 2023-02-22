@@ -47,8 +47,6 @@ namespace HRM.Infrastructure.Service
                     CandidateId = model.CandidateId,
                     JobRequirementId = model.JobRequirementId,
                     AppliedOn= model.AppliedOn
-                    
-                  
                 });
             }
             return null;

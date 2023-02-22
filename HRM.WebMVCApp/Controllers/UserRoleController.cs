@@ -2,16 +2,21 @@
 using HRM.ApplicationCore.Model.Request;
 using HRM.Infrastructure.Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HRM.WebMVCApp.Controllers
 {
     public class UserRoleController : Controller
     {
         private readonly IUserRoleServiceAsync userRoleServiceAsync;
+        private readonly IRoleServiceAsync roleServiceAsync;
+        private readonly IUserServiceAsync userServiceAsync;
 
-        public UserRoleController(IUserRoleServiceAsync _userRoleServiceAsync)
+        public UserRoleController(IUserRoleServiceAsync _userRoleServiceAsync, IRoleServiceAsync _roleServiceAsync, IUserServiceAsync _userServiceAsync)
         {
             userRoleServiceAsync = _userRoleServiceAsync;
+            roleServiceAsync = _roleServiceAsync;
+            userServiceAsync = _userServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
@@ -19,8 +24,9 @@ namespace HRM.WebMVCApp.Controllers
             return View(userRoleCollection);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await GetAllViewBagValues();
             return View();
         }
 
@@ -37,6 +43,7 @@ namespace HRM.WebMVCApp.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
+            await GetAllViewBagValues();
             var result = await userRoleServiceAsync.GetUserRoleByIdAsnc(id);
             return View(result);
         }
@@ -57,6 +64,7 @@ namespace HRM.WebMVCApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
+            await GetAllViewBagValues();
             var result = await userRoleServiceAsync.GetUserRoleByIdAsnc(id);
             return View(result);
         }
@@ -74,6 +82,24 @@ namespace HRM.WebMVCApp.Controllers
                 return View(model);
             }
             
+        }
+
+        [NonAction]
+        public async Task GetUser()
+        {
+            ViewBag.UserList = new SelectList(await userServiceAsync.GetAllUsersAsync(), "Id", "Username");
+        }
+
+        [NonAction]
+        public async Task GetRole()
+        {
+            ViewBag.RoleList = new SelectList(await roleServiceAsync.GetAllRolesAsync(), "Id", "Name");
+        }
+
+        public async Task GetAllViewBagValues()
+        {
+            await GetUser();
+            await GetRole();
         }
     }
 }

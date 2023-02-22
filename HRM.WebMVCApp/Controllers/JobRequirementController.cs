@@ -1,16 +1,19 @@
 ﻿using HRM.ApplicationCore.Contract.Service;
 using HRM.ApplicationCore.Model.Request;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HRM.WebMVCApp.Controllers
 {
     public class JobRequirementController : Controller
     {
         private readonly IJobRequirementServiceAsync jobRequirementServiceAsync;
-        
-        public JobRequirementController(IJobRequirementServiceAsync _jobRequirementServiceAsync)
+        private readonly IJobCategoryServiceAsync jobCategoryServiceAsync;
+
+        public JobRequirementController(IJobRequirementServiceAsync _jobRequirementServiceAsync, IJobCategoryServiceAsync _jobCategoryServiceAsync)
         {
             jobRequirementServiceAsync = _jobRequirementServiceAsync;
+            jobCategoryServiceAsync = _jobCategoryServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
@@ -18,8 +21,9 @@ namespace HRM.WebMVCApp.Controllers
             return View(jobRequirementCollection);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await GetJobCategory();
             return View();
         }
 
@@ -37,6 +41,7 @@ namespace HRM.WebMVCApp.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var result = await jobRequirementServiceAsync.GetJobRequirementByIdAsnc(id);
+            await GetJobCategory();
             return View(result);
         }
 
@@ -57,6 +62,7 @@ namespace HRM.WebMVCApp.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var result = await jobRequirementServiceAsync.GetJobRequirementByIdAsnc(id);
+            await GetJobCategory();
             return View(result);
         }
 
@@ -73,6 +79,12 @@ namespace HRM.WebMVCApp.Controllers
                 return View(model);
             }
 
+        }
+
+        [NonAction]
+        public async Task GetJobCategory()
+        {
+            ViewBag.JobCategoryList = new SelectList(await jobCategoryServiceAsync.GetAllJobCategorysAsync(), "Id", "Name");
         }
     }
 }

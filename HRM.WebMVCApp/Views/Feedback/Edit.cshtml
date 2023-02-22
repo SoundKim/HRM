@@ -4,7 +4,12 @@
         <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
             <label for="InterviewId">InterviewId</label>
-            <input asp-for="InterviewId" class="form-control" />
+            <select asp-for="InterviewId" class="form-control">
+                @foreach (var item in ViewBag.InterviewList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="InterviewId"></span>
         </div>
         <div class="my-5 row col-12">

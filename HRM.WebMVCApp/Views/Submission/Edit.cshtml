@@ -1,14 +1,25 @@
 ﻿@model SubmissionResponseModel
 <div class="container">
     <form asp-controller="Submission" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
-            <label for="CandidateId">CandidateId</label>
-            <input asp-for="CandidateId" class="form-control" />
+            <label for="CandidateId">Candidate</label>
+            <select asp-for="CandidateId" class="form-control">
+                @foreach (var item in ViewBag.CandidateList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="CandidateId"></span>
         </div>
         <div class="my-5 row col-12">
             <label for="JobRequirementId">JobRequirementId</label>
-            <input asp-for="JobRequirementId" class="form-control" />
+            <select asp-for="JobRequirementId" class="form-control">
+                @foreach (var item in ViewBag.JobRequirementList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="JobRequirementId"></span>
         </div>
         <div class="my-5 row col-12 input-group date" data-provide="datepicker">

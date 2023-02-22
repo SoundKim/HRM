@@ -2,16 +2,22 @@
 using HRM.ApplicationCore.Model.Request;
 using HRM.Infrastructure.Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HRM.WebMVCApp.Controllers
 {
     public class SubmissionController : Controller
     {
         private readonly ISubmissionServiceAsync submissionServiceAsync;
+        private readonly IJobRequirementServiceAsync jobRequirementServiceAsync;
+        private readonly ICandidateServiceAsync candidateServiceAsync;
 
-        public SubmissionController(ISubmissionServiceAsync _submissionServiceAsync)
+        public SubmissionController(ISubmissionServiceAsync _submissionServiceAsync, IJobRequirementServiceAsync _jobRequirementServiceAsync, ICandidateServiceAsync _candidateServiceAsync)
         {
             submissionServiceAsync = _submissionServiceAsync;
+            jobRequirementServiceAsync = _jobRequirementServiceAsync;
+            candidateServiceAsync = _candidateServiceAsync;
+
         }
         public async Task<IActionResult> Index()
         {
@@ -19,8 +25,9 @@ namespace HRM.WebMVCApp.Controllers
             return View(submissionCollection);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await GetAllViewBagValues();
             return View();
         }
 
@@ -38,6 +45,7 @@ namespace HRM.WebMVCApp.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var result = await submissionServiceAsync.GetSubmissionByIdAsnc(id);
+            await GetAllViewBagValues();
             return View(result);
         }
 
@@ -58,6 +66,7 @@ namespace HRM.WebMVCApp.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var result = await submissionServiceAsync.GetSubmissionByIdAsnc(id);
+            await GetAllViewBagValues();
             return View(result);
         }
 
@@ -74,6 +83,26 @@ namespace HRM.WebMVCApp.Controllers
                 return View(model);
             }
             
+        }
+
+        [NonAction]
+        public async Task GetJobRequirement()
+        {
+            ViewBag.JobRequirementList = new SelectList(await jobRequirementServiceAsync.GetAllJobRequirementsAsync(), "Id", "Title");
+        }
+
+        [NonAction]
+        public async Task GetCandidate()
+        {
+            var result = await candidateServiceAsync.GetAllCandidatesAsync();
+            ViewBag.CandidateList = new SelectList( result.Select(x => new { Id = x.Id, Title = x.FirstName + " " + x.LastName }), "Id", "Title");
+        }
+
+        [NonAction]
+        public async Task GetAllViewBagValues()
+        {
+            await GetJobRequirement();
+            await GetCandidate();
         }
     }
 }

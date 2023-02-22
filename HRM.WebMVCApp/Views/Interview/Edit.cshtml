@@ -4,7 +4,12 @@
         <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
             <label for="SubmissionId">SubmissionId</label>
-            <input asp-for="SubmissionId" class="form-control" />
+            <select asp-for="SubmissionId" class="form-control">
+                @foreach (var item in ViewBag.SubmissionList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="SubmissionId"></span>
         </div>
         <div class="my-5 row col-12">
@@ -14,17 +19,36 @@
         </div>
         <div class="my-5 row col-12">
             <label for="InterviewTypeId">InterviewTypeId</label>
-            <input asp-for="InterviewTypeId" class="form-control" />
+            <select asp-for="InterviewTypeId" class="form-control">
+                @foreach (var item in ViewBag.InterviewTypeList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="InterviewTypeId"></span>
         </div>
         <div class="my-5 row col-12">
             <label for="InterviewStatusId">InterviewStatusId</label>
-            <input asp-for="InterviewStatusId" class="form-control" />
+            <select asp-for="InterviewStatusId" class="form-control">
+                @foreach (var item in ViewBag.InterviewStatusList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="InterviewStatusId"></span>
         </div>
         <div class="my-5 row col-12">
             <label for="InterviewerId">InterviewerId</label>
-            <input asp-for="InterviewerId" class="form-control" />
+            <select asp-for="InterviewerId" class="form-control">
+                @if (ViewBag.InterviewerList != null)
+                {
+                    @foreach (var item in ViewBag.InterviewerList)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                }
+
+            </select>
             <span asp-validation-for="InterviewerId"></span>
         </div>
         <input type="submit" value="Update Interview" class="btn btn-primary" />

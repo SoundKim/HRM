@@ -1,10 +1,15 @@
 ﻿@model FeedbackResponseModel
 <div class="container">
-    <form asp-controller="Feedback" asp-action="Create" method="post">
+    <form asp-controller="Feedback" asp-action="Delete" method="post">
         <input type="hidden" asp-for="Id" />
         <div class="my-5 row col-12">
             <label for="InterviewId">InterviewId</label>
-            <input asp-for="InterviewId" class="form-control" disabled />
+            <select asp-for="InterviewId" class="form-control" disabled>
+                @foreach (var item in ViewBag.InterviewList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="InterviewId"></span>
         </div>
         <div class="my-5 row col-12">

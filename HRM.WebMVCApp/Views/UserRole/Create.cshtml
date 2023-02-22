@@ -3,12 +3,22 @@
     <form asp-controller="UserRole" asp-action="Create" method="post">
         <div class="my-5 row col-12">
             <label for="UserId">UserId</label>
-            <input asp-for="UserId" class="form-control" />
+            <select asp-for="UserId" class="form-control">
+                @foreach (var item in ViewBag.UserList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="UserId"></span>
         </div>
         <div class="my-5 row col-12">
             <label for="RoleId">RoleId</label>
-            <input asp-for="RoleId" class="form-control" />
+            <select asp-for="RoleId" class="form-control">
+                @foreach (var item in ViewBag.RoleList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="RoleId"></span>
         </div>
         <input type="submit" value="Add User Role" class="btn btn-primary" />

@@ -20,6 +20,8 @@ namespace HRM.ApplicationCore.Model.Request
         public string Phone { get; set; }
         public DateTime HireDate { get; set; }
         public int? ManagerId { get; set; }
-
+        public int? EmployeeRoleId { get; set; }
+        public int? EmployeeTypeId { get; set; }
+        public int? EmployeeStatusId { get; set; }
     }
 }

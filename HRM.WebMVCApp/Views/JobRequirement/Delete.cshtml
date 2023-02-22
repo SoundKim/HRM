@@ -29,7 +29,12 @@
         </div>
         <div class="my-5 row col-12">
             <label for="JobCategoryId">JobCategoryId</label>
-            <input asp-for="JobCategoryId" class="form-control" disabled />
+            <select asp-for="JobCategoryId" class="form-control" disabled>
+                @foreach (var item in ViewBag.JobCategoryList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="JobCategoryId"></span>
         </div>
         <div class="my-5 row col-12 form-check">

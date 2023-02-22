@@ -33,8 +33,43 @@
         </div>
         <div class="my-5 row col-12">
             <label for="ManagerId">Manager Id</label>
-            <input asp-for="ManagerId" class="form-control" />
+            <select asp-for="ManagerId" class="form-control">
+                @foreach (var item in ViewBag.ManagerList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
             <span asp-validation-for="ManagerId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="EmployeeStatusId">EmployeeStatusId</label>
+            <select asp-for="EmployeeStatusId" class="form-control">
+                @foreach (var item in ViewBag.EmployeeStatusList)
+                {
+                        <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+            <span asp-validation-for="EmployeeStatusId"></span>
+        </div>
+         <div class="my-5 row col-12">
+            <label for="EmployeeRoleId">EmployeeRoleId</label>
+            <select asp-for="EmployeeRoleId" class="form-control">
+                @foreach (var item in ViewBag.EmployeeRoleList)
+                {
+                            <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+            <span asp-validation-for="EmployeeRoleId"></span>
+        </div>
+        <div class="my-5 row col-12">
+            <label for="EmployeeTypeId">EmployeeTypeId</label>
+            <select asp-for="EmployeeTypeId" class="form-control">
+                @foreach (var item in ViewBag.EmployeeTypeList)
+                {
+                    <option value="@item.Value">@item.Text</option>
+                }
+            </select>
+            <span asp-validation-for="EmployeeTypeId"></span>
         </div>
         <input type="submit" value="Add Employee" class="btn btn-primary" />
     </form>

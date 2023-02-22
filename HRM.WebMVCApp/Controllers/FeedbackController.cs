@@ -1,16 +1,20 @@
 ﻿using HRM.ApplicationCore.Contract.Service;
 using HRM.ApplicationCore.Model.Request;
+using HRM.Infrastructure.Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HRM.WebMVCApp.Controllers
 {
     public class FeedbackController : Controller
     {
         private readonly IFeedbackServiceAsync feedbackServiceAsync;
-        
-        public FeedbackController(IFeedbackServiceAsync _feedbackServiceAsync)
+        private readonly IInterviewServiceAsync interviewServiceAsync;
+
+        public FeedbackController(IFeedbackServiceAsync _feedbackServiceAsync, IInterviewServiceAsync _interviewServiceAsync)
         {
             feedbackServiceAsync = _feedbackServiceAsync;
+            interviewServiceAsync = _interviewServiceAsync;
         }
         public async Task<IActionResult> Index()
         {
@@ -18,8 +22,9 @@ namespace HRM.WebMVCApp.Controllers
             return View(feedbackCollection);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            await GetInterview();
             return View();
         }
 
@@ -36,6 +41,7 @@ namespace HRM.WebMVCApp.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
+            await GetInterview();
             var result = await feedbackServiceAsync.GetFeedbackByIdAsnc(id);
             return View(result);
         }
@@ -56,6 +62,7 @@ namespace HRM.WebMVCApp.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
+            await GetInterview();
             var result = await feedbackServiceAsync.GetFeedbackByIdAsnc(id);
             return View(result);
         }
@@ -74,5 +81,12 @@ namespace HRM.WebMVCApp.Controllers
             }
 
         }
+
+        [NonAction]
+        public async Task GetInterview()
+        {
+            ViewBag.InterviewList = new SelectList(await interviewServiceAsync.GetAllInterviewsAsync(), "Id", "Id");
+        }
+
     }
 }
